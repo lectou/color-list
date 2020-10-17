@@ -1,0 +1,84 @@
+$width-item: 280px;
+
+.lists {
+  li {
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 6px;
+    color: $white;
+    position: relative;
+    max-width: $width-item;
+    width: 100%;
+    margin: 2px 0;
+    display: flex;
+    & > a {
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding: 8px 30px;
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      span {
+        max-width: 160px;
+        color: $white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .color-marker {
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      top: 52%;
+      left: 10px;
+      transform: translate(0, -50%);
+      border-radius: 50%;
+      background-color: #fff;
+    }
+    & > svg {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translate(0, -50%);
+    }
+    .delete-button {
+      position: absolute;
+      top: 54%;
+      right: 10px;
+      transform: translate(0, -50%);
+      transition: 0.25s;
+      opacity: 0;
+      svg {
+        margin: 0;
+        fill: #cacaca;
+        &:hover {
+          fill: #fff;
+        }
+      }
+    }
+    &:not(:last-child):hover {
+      background-color: #535353;
+      .delete-button {
+        opacity: 1;
+      }
+    }
+  }
+  .active {
+    background-color: #535353;
+  }
+  .title {
+    margin-bottom: 50px;
+  }
+  .add-button {
+    margin-top: 50px;
+    .button-add-item {
+      @include button-add-item;
+      color: rgb(221, 221, 221);
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

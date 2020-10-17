@@ -1,0 +1,37 @@
+.new-task {
+  background-color: #cdc;
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  & > input {
+    flex: 1 0 auto;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    &::placeholder {
+      color: #cfcfcf;
+    }
+  }
+  &__buttons {
+    margin-left: 10px;
+    button {
+      width: 75px;
+      background-color: #a9a9a9;
+      padding: 10px 5px;
+      color: #fff;
+      transition: background-color 0.3s;
+      border-radius: 0 5px 5px 0;
+      &:hover {
+        background-color: darken($color: #a9a9a9, $amount: 5);
+      }
+      &:not(:last-child) {
+        background-color: #56a9a9;
+        border-radius: 5px 0 0 5px;
+        &:hover {
+          background-color: darken($color: #56a9a9, $amount: 5);
+        }
+      }
+    }
+  }
+}
