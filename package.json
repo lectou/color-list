@@ -71,7 +71,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "fake-json": "json-server ./src/db/db.json --watch --port 3002",
+    "fake-json": "json-server ./public/db.json --watch --port 3002",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
