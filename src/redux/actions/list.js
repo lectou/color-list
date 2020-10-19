@@ -21,8 +21,8 @@ export const deleteList = (payload) => ({
 });
 
 
-const getList = axios.get('http://localhost:3002/lists?_expand=color&_embed=tasks');
-const getColors = axios.get('http://localhost:3002/colors');
+const getList = axios.get('/lists?_expand=color&_embed=tasks');
+const getColors = axios.get('/colors');
 
 export const setDataList = () => dispatch => {
   Promise.all([getList, getColors])
@@ -42,7 +42,7 @@ export const setNewListData = (obj) => dispatch => {
     colorId: obj.colorId
   }
   axios
-    .post('http://localhost:3002/lists', newObj)
+    .post('/lists', newObj)
     .then(() => dispatch(setNewList(obj)))
     .catch(() => {
       alert("Error to update list")
@@ -51,7 +51,7 @@ export const setNewListData = (obj) => dispatch => {
 
 export const deleteListData = (id) => dispatch => {
   axios
-    .delete(`http://localhost:3002/lists/${id}`)
+    .delete(`/lists/${id}`)
     .then(() => dispatch(deleteList(id)))
     .catch(() => {
       alert("Error to delete list")
